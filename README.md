@@ -1,6 +1,7 @@
 # Mountaineer
-## Additions
-A CLI to convert 2D vector data to 3D vector data.   
+A CLI to convert 2D vector data to 3D vector data.  
+
+## Usage
 CLI Usage: One liner
 
 mountaineer [input file] [lat] [lon] [output file]
@@ -12,7 +13,7 @@ mountaineer [input file] [lat] [lon] [output file]
 
 [output]: User-input Output file name. File will be placed in the same folder as the input file. File length should not exceed 128 characters. File output will DEFAULT to .GeoJSON, but other outputs can be selected by changing the file extension. 
 
-
+## Other Commands
 Other commands:
 
 mountaineer – help
@@ -21,8 +22,7 @@ mountaineer – help
 mountaineer q - exits the CLI and returns user to terminal 
 
 
-
-Description of Process
+### Description of Process
 
 Locally
 -CLI awaits for user input, user input being a path to a 2d geometry file stored locally.
@@ -41,7 +41,7 @@ AWS
 -WKT file now has Z values as a field
 -Data can be exported as a GEOJSON default file format, although KML and SHP will be accepted as well.
 
-
+### Misc Information
 CLI Docs : MISC information
 
 Users: Optimal users for this application are open-source, geospatial experts with understanding of Geospatial data formats and a general reliance on command-line input as opposed to GUI input. Users of this software should be familiar with input and output data types, geospatial data conversion, and the necessary fields required to append geospatial data without a user interface. 
@@ -50,5 +50,5 @@ Use Case: This application will be able to turn a 2D Vector file into a 3D Vecto
 
 Where used: This application could be used by navigators or route planners to prepare for particularly high or low stretches of trails for hikes, bikes, or whichever other elements where height could be applied to a trail. If packaged as a script, this tool could be used to 3d-ify bike trails through simple input, and be used to generate maps for display or navigational use.
 
-
+### Diagram
 ![Embedded Diagram](/mountaineer_v1.png?raw=true "Optional Title")
