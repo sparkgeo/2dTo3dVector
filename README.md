@@ -51,3 +51,4 @@ Use Case: This application will be able to turn a 2D Vector file into a 3D Vecto
 Where used: This application could be used by navigators or route planners to prepare for particularly high or low stretches of trails for hikes, bikes, or whichever other elements where height could be applied to a trail. If packaged as a script, this tool could be used to 3d-ify bike trails through simple input, and be used to generate maps for display or navigational use.
 
 
+![Embedded Diagram](/mountaineer_v1.png?raw=true "Optional Title")
