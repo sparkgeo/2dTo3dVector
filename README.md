@@ -28,7 +28,6 @@ mountaineer –-help / --h
 
 ## get-elev - Z values
 
-AWS
 -WKT Temporary file is opened in new geopandas dataframe
 
 -Extent of file geometry is converted into WKT 
