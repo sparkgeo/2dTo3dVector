@@ -1,48 +1,8 @@
 # Mountaineer
 A CLI to convert 2D vector data to 3D vector data.  
 
-## Usage
-CLI Usage: One liner
-
-mountaineer [input file] [lat] [lon] [output file]
-
-[input file]: Input file. File type can be .KML, .SHP, .GeoJSON (preferred). These are geospatial formats that contain Lat/long coordinates. Input file length should not exceed 128 characters. 
-
-[lat]: Latitude field. Required to create WKT
-[lon]: Longitude field. Required to create WKT
-
-[output]: User-input Output file name. File will be placed in the same folder as the input file. File length should not exceed 128 characters. File output will DEFAULT to .GeoJSON, but other outputs can be selected by changing the file extension. 
-
-## Other Commands
-Other commands:
-
-mountaineer – help
-	Brings up help: shows a baseline command for users, accepted file types, accepted inputs and outputs
-
-mountaineer q - exits the CLI and returns user to terminal 
-
-
-### Description of Process
-
-Locally
--CLI awaits for user input, user input being a path to a 2d geometry file stored locally.
--File can be points, lines, or polygon for geometry
--File is opened in Geopandas within a new dataframe
--File is checked for proper geometry values for its data type, type of file is read back via console for verification.
--File is scanned for latitude and longitude headers
--Latitude and Longitude values are exported from file into a temporary file, as Well Known Text (WKT)
-
-AWS
--WKT Temporary file is opened in new geopandas dataframe
--Extent of file is read back into lat/long and is pulled from AWS
--AWS Terrain tile matching extent of file is copied from AWS
--Z values are copied from the tile/files in question into a new file containing the Z Values
--Intersect is run on tiles where Z values are appended to the temp WKT file from before
--WKT file now has Z values as a field
--Data can be exported as a GEOJSON default file format, although KML and SHP will be accepted as well.
-
-### Misc Information
-CLI Docs : MISC information
+### Information
+CLI Docs : Information
 
 Users: Optimal users for this application are open-source, geospatial experts with understanding of Geospatial data formats and a general reliance on command-line input as opposed to GUI input. Users of this software should be familiar with input and output data types, geospatial data conversion, and the necessary fields required to append geospatial data without a user interface. 
 
@@ -50,5 +10,32 @@ Use Case: This application will be able to turn a 2D Vector file into a 3D Vecto
 
 Where used: This application could be used by navigators or route planners to prepare for particularly high or low stretches of trails for hikes, bikes, or whichever other elements where height could be applied to a trail. If packaged as a script, this tool could be used to 3d-ify bike trails through simple input, and be used to generate maps for display or navigational use.
 
+
+## Usage
+CLI Usage: One liner
+
+mountaineer get-elev [input file] [output file]
+
+[input file]: Input file. Default file type is .GeoJSON. Input file length should not exceed 128 characters. 
+[output file]: Output file. Located in the same directory as the input file, will default to .GeoJSON.
+
+## Other Options
+
+mountaineer –-help / --h
+	Brings up help: shows a baseline command for users, requirements for input
+
+### Description of Process
+
+## get-elev - Z values
+
+AWS
+-WKT Temporary file is opened in new geopandas dataframe
+-Extent of file geometry is converted into WKT 
+-AWS Terrain tile with matching coordinates is pulled
+-Z values are copied from the tile/files in question into the temporary file
+-WKT file now has appended Z values for height
+-Data is exported into GeoJSON and output in local folder
+
 ### Diagram
 ![Embedded Diagram](/mountaineer_v1.png?raw=true "Optional Title")
+[![](https://mermaid.ink/img/pako:eNptkcFqwzAMhl9F6LpmD-BDoTQlDAqDtdtg5CJiZfOW2J0tF0rpu09Zk0DZdLHx96Hfls_YBMtoMPF3Zt9w6eg9Ul970HpOHIvl8m69fTDwlH2CTcdHqFiuXM9nvA7-yFFAgvLwmYK_carSwDaQBeehJKFWQ_jGWL3uzNAa9hwjqbZ3HaeromwOmrAMGCJLjp7tkKsYKMG9uPZP9spaeCteqMtTz6qcWz5mOeT_r65OMYxhllqNHczfNZ2S8DisqXCBPceenNWxngdWo3ywvhaNbi3Frxprf1EvHywJb6yTENG01CVeIGUJu5Nv0EjMPEnjv4zW5QcveYk2)](https://mermaid.live/edit#pako:eNptkcFqwzAMhl9F6LpmD-BDoTQlDAqDtdtg5CJiZfOW2J0tF0rpu09Zk0DZdLHx96Hfls_YBMtoMPF3Zt9w6eg9Ul970HpOHIvl8m69fTDwlH2CTcdHqFiuXM9nvA7-yFFAgvLwmYK_carSwDaQBeehJKFWQ_jGWL3uzNAa9hwjqbZ3HaeromwOmrAMGCJLjp7tkKsYKMG9uPZP9spaeCteqMtTz6qcWz5mOeT_r65OMYxhllqNHczfNZ2S8DisqXCBPceenNWxngdWo3ywvhaNbi3Frxprf1EvHywJb6yTENG01CVeIGUJu5Nv0EjMPEnjv4zW5QcveYk2)
