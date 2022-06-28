@@ -30,12 +30,17 @@ mountaineer –-help / --h
 
 AWS
 -WKT Temporary file is opened in new geopandas dataframe
+
 -Extent of file geometry is converted into WKT 
+
 -AWS Terrain tile with matching coordinates is pulled
+
 -Z values are copied from the tile/files in question into the temporary file
+
 -WKT file now has appended Z values for height
+
 -Data is exported into GeoJSON and output in local folder
 
 ### Diagram
-![Embedded Diagram](/mountaineer_v1.png?raw=true "Optional Title")
-[![](https://mermaid.ink/img/pako:eNptkcFqwzAMhl9F6LpmD-BDoTQlDAqDtdtg5CJiZfOW2J0tF0rpu09Zk0DZdLHx96Hfls_YBMtoMPF3Zt9w6eg9Ul970HpOHIvl8m69fTDwlH2CTcdHqFiuXM9nvA7-yFFAgvLwmYK_carSwDaQBeehJKFWQ_jGWL3uzNAa9hwjqbZ3HaeromwOmrAMGCJLjp7tkKsYKMG9uPZP9spaeCteqMtTz6qcWz5mOeT_r65OMYxhllqNHczfNZ2S8DisqXCBPceenNWxngdWo3ywvhaNbi3Frxprf1EvHywJb6yTENG01CVeIGUJu5Nv0EjMPEnjv4zW5QcveYk2)](https://mermaid.live/edit#pako:eNptkcFqwzAMhl9F6LpmD-BDoTQlDAqDtdtg5CJiZfOW2J0tF0rpu09Zk0DZdLHx96Hfls_YBMtoMPF3Zt9w6eg9Ul970HpOHIvl8m69fTDwlH2CTcdHqFiuXM9nvA7-yFFAgvLwmYK_carSwDaQBeehJKFWQ_jGWL3uzNAa9hwjqbZ3HaeromwOmrAMGCJLjp7tkKsYKMG9uPZP9spaeCteqMtTz6qcWz5mOeT_r65OMYxhllqNHczfNZ2S8DisqXCBPceenNWxngdWo3ywvhaNbi3Frxprf1EvHywJb6yTENG01CVeIGUJu5Nv0EjMPEnjv4zW5QcveYk2)
+![Rough Diagram (V1)](/mountaineer_v1.png?raw=true "Optional Title")
+[More complete but still rough diagram[](https://mermaid.ink/img/pako:eNptkcFqwzAMhl9F6LpmD-BDoTQlDAqDtdtg5CJiZfOW2J0tF0rpu09Zk0DZdLHx96Hfls_YBMtoMPF3Zt9w6eg9Ul970HpOHIvl8m69fTDwlH2CTcdHqFiuXM9nvA7-yFFAgvLwmYK_carSwDaQBeehJKFWQ_jGWL3uzNAa9hwjqbZ3HaeromwOmrAMGCJLjp7tkKsYKMG9uPZP9spaeCteqMtTz6qcWz5mOeT_r65OMYxhllqNHczfNZ2S8DisqXCBPceenNWxngdWo3ywvhaNbi3Frxprf1EvHywJb6yTENG01CVeIGUJu5Nv0EjMPEnjv4zW5QcveYk2)](https://mermaid.live/edit#pako:eNptkcFqwzAMhl9F6LpmD-BDoTQlDAqDtdtg5CJiZfOW2J0tF0rpu09Zk0DZdLHx96Hfls_YBMtoMPF3Zt9w6eg9Ul970HpOHIvl8m69fTDwlH2CTcdHqFiuXM9nvA7-yFFAgvLwmYK_carSwDaQBeehJKFWQ_jGWL3uzNAa9hwjqbZ3HaeromwOmrAMGCJLjp7tkKsYKMG9uPZP9spaeCteqMtTz6qcWz5mOeT_r65OMYxhllqNHczfNZ2S8DisqXCBPceenNWxngdWo3ywvhaNbi3Frxprf1EvHywJb6yTENG01CVeIGUJu5Nv0EjMPEnjv4zW5QcveYk2)
